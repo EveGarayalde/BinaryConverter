@@ -2,13 +2,15 @@ package main;
 
 import mod.Msg;
 
+//This is the main class which holds all the methods needed for the code
 public class main {
 	
-
+	//This is the main method which is where the code starts
 	public static void main(String[] args0) {
 		openPage();
 	}
 	
+	//This creates a conversion table for the user and has the user choose between inputting an integer or a binary code. 
 	public static void openPage() {
 		int[] og = new int[8];
 		og[0] = 128; og[1] = 64;
@@ -39,6 +41,7 @@ public class main {
 		}
 	}
 	
+	//this converts the inputed binary code into an integer.
 	public static void convertBCToInt() {
 		String BC = Msg.in("Your binary must be 8 digits long");
 		if (BC.length() > 8) {
@@ -77,6 +80,7 @@ public class main {
 		
 	}
 	
+	//this converts the inputed integer into a binary code.
 	public static void convertIntToBC() {
 		String IN = Msg.in("Your integer value must be less than 255");
 		if (IN.length() > 255) {
@@ -119,6 +123,7 @@ public class main {
 		
 	}
 	
+	//this draws out the conversion for the user (from binary to int)
 	public static String drawConv(int[] og, int[] bc, int[] don, int sum) {
 		String BOARD = "";
 		String space = " ";
@@ -137,6 +142,7 @@ public class main {
 		
 	}
 	
+	//this draws out the conversion for the user (from int to binary)
 	public static String drawConv2(String IN, int[] bc, int[] don) {
 		String BOARD = "";
 		String space = " ";
@@ -153,6 +159,7 @@ public class main {
 		return BOARD;
 	}
 	
+	//This is the exit method which is what runs when the user want to exit the program (for when the convert binary to int)
 	public static void exit(int sum) {
 		String[] options = {"back to home page", "exit"};
 		int opts = 0;
@@ -166,6 +173,7 @@ public class main {
 		}
 	}
 	
+	//This is the exit method which is what runs when the user want to exit the program (for when they convert int to binary)
 	public static void exit(int[] don) {
 		String BOARD = "";
 		String space = " ";
